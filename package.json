@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "fixclosure": "^2.2.1",
+    "prettier-linter-helpers": "^1.0.0",
     "requireindex": "~1.1.0"
   },
   "devDependencies": {
