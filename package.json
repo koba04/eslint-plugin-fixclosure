@@ -13,7 +13,6 @@
     "test": "mocha tests --recursive"
   },
   "dependencies": {
-    "fixclosure": "^2.2.1",
     "prettier-linter-helpers": "^1.0.0",
     "requireindex": "~1.1.0"
   },
@@ -21,11 +20,13 @@
     "@cybozu/eslint-config": "^5.2.0",
     "eslint": "^6.0.1",
     "eslint-plugin-eslint-plugin": "^2.1.0",
+    "fixclosure": "^2.2.1",
     "mocha": "^3.5.3",
     "prettier": "^1.18.2"
   },
   "peerDependencies": {
-    "eslint": "^6.0.0"
+    "eslint": "^6.0.0",
+    "fixclosure": "^2.2.1"
   },
   "engines": {
     "node": ">=8.10.0"
