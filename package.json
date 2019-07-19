@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-fixclosure",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "this is a eslint plugin for fixclosure",
   "keywords": [
     "eslint",
@@ -26,7 +26,7 @@
   },
   "peerDependencies": {
     "eslint": "^6.0.0",
-    "fixclosure": "^2.3.0"
+    "fixclosure": "^2.4.1"
   },
   "engines": {
     "node": ">=8.10.0"
