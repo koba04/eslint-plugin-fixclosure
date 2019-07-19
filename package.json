@@ -20,7 +20,7 @@
     "@cybozu/eslint-config": "^5.2.0",
     "eslint": "^6.0.1",
     "eslint-plugin-eslint-plugin": "^2.1.0",
-    "fixclosure": "^2.3.0",
+    "fixclosure": "^2.4.1",
     "mocha": "^3.5.3",
     "prettier": "^1.18.2"
   },
