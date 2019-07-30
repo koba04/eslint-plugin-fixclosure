@@ -9,7 +9,7 @@ const readString = file =>
   fs.readFileSync(path.resolve(__dirname, "fixtures", file)).toString();
 
 new RuleTester().run("fixclosure", rule, {
-  valid: [readString("valid/ok.js")],
+  valid: [readString("valid/ok.js"), readString("valid/provide-roots-ok.js")],
   invalid: [
     {
       code: readString("invalid/missing-require.js"),
