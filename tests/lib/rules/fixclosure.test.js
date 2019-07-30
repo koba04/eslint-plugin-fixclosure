@@ -7,6 +7,8 @@ new RuleTester().run("fixclosure", rule, {
   valid: [
     `goog.provide('goog.bar');
 
+goog.require('goog.baz');
+
 goog.bar.bar1 = function() {
   goog.baz.baz1();
 };
@@ -19,8 +21,6 @@ goog.bar.bar2 = function() {
     {
       code: `goog.provide('goog.bar');
 
-goog.require('goog.baz');
-
 goog.bar.bar1 = function() {
   goog.baz.baz1();
 };
@@ -30,6 +30,8 @@ goog.bar.bar2 = function() {
 };`,
       output: `goog.provide('goog.bar');
 
+goog.require('goog.baz');
+
 goog.bar.bar1 = function() {
   goog.baz.baz1();
 };
@@ -37,7 +39,7 @@ goog.bar.bar1 = function() {
 goog.bar.bar2 = function() {
   goog.baz.baz2();
 };`,
-      errors: ["Delete `require('goog.baz');\u000a\u000agoog.`"]
+      errors: ["Insert `require('goog.baz');\u000a\u000agoog.`"]
     },
     {
       code: `goog.provide('foo.bar');
