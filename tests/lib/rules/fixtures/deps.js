@@ -1,0 +1,1 @@
+goog.addDependency('deps.js', ['goog.deps'], [], {});

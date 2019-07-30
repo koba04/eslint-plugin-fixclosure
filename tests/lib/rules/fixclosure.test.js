@@ -2,65 +2,29 @@
 
 const { RuleTester } = require("eslint");
 const rule = require("../../../lib/rules/fixclosure");
+const fs = require("fs");
+const path = require("path");
+
+const readString = file =>
+  fs.readFileSync(path.resolve(__dirname, "fixtures", file)).toString();
 
 new RuleTester().run("fixclosure", rule, {
-  valid: [
-    `goog.provide('goog.bar');
-
-goog.require('goog.baz');
-
-goog.bar.bar1 = function() {
-  goog.baz.baz1();
-};
-
-goog.bar.bar2 = function() {
-  goog.baz.baz2();
-};`
-  ],
+  valid: [readString("valid/ok.js")],
   invalid: [
     {
-      code: `goog.provide('goog.bar');
-
-goog.bar.bar1 = function() {
-  goog.baz.baz1();
-};
-
-goog.bar.bar2 = function() {
-  goog.baz.baz2();
-};`,
-      output: `goog.provide('goog.bar');
-
-goog.require('goog.baz');
-
-goog.bar.bar1 = function() {
-  goog.baz.baz1();
-};
-
-goog.bar.bar2 = function() {
-  goog.baz.baz2();
-};`,
+      code: readString("invalid/missing-require.js"),
+      output: readString("invalid/missing-require-fix.js"),
       errors: ["Insert `require('goog.baz');\u000a\u000agoog.`"]
     },
     {
-      code: `goog.provide('foo.bar');
-
-foo.bar.bar1 = function() {
-  foo.bar.baz1();
-};
-
-goog.bar.bar2 = function() {
-  baz.foo();
-};`,
-      output: `goog.provide('goog.bar');
-
-foo.bar.bar1 = function() {
-  foo.bar.baz1();
-};
-
-goog.bar.bar2 = function() {
-  baz.foo();
-};`,
-      errors: ["Replace `foo` with `goog`"]
+      code: readString("invalid/with-deps.js"),
+      output: readString("invalid/with-deps-fix.js"),
+      options: [
+        {
+          depsJs: [path.resolve(__dirname, "fixtures", "deps.js")]
+        }
+      ],
+      errors: ["Insert `require('goog.deps');\u000a\u000agoog.`"]
     }
   ]
 });

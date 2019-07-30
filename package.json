@@ -12,9 +12,11 @@
     "lint": "eslint lib tests",
     "release": "npm run lint && npm test && standard-version",
     "release:dryrun": "standard-version --dry-run",
-    "test": "mocha tests --recursive"
+    "test": "mocha 'tests/**/*.test.js'"
   },
   "dependencies": {
+    "array.prototype.flat": "^1.2.1",
+    "google-closure-deps": "^20190709.0.0",
     "prettier-linter-helpers": "^1.0.0",
     "requireindex": "~1.1.0"
   },
