@@ -55,6 +55,8 @@ You can pass the following options to `fixclosure`.
     - `deps.js` files, which is a comma separated list.
 - `config`
     - a path for `.fixclosurerc`.
+- `provideRoots`
+    - root namespaces you use.
 
 You can see the details on the documentation of `fixclosure`.
 
