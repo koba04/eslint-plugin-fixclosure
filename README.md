@@ -57,6 +57,8 @@ You can pass the following options to `fixclosure`.
     - a path for `.fixclosurerc`.
 - `provideRoots`
     - root namespaces you use.
+- `useForwardDeclare`
+    - Use `goog.forwardDeclare()` instead of `goog.requireType()`
 
 You can see the details on the documentation of `fixclosure`.
 

@@ -46,6 +46,23 @@ new RuleTester().run("fixclosure", rule, {
         }
       ],
       errors: ["Insert `require('goog.deps');\u000a\u000agoog.`"]
+    },
+    {
+      code: readString("invalid/missing-require-type.js"),
+      output: readString("invalid/missing-require-type-fix.js"),
+      errors: ["Insert `goog.requireType('goog.baz.Bar');\n\n`"]
+    },
+    {
+      code: readString("invalid/missing-require-type.js"),
+      output: readString(
+        "invalid/missing-require-type-fix-with-forward-declare.js"
+      ),
+      options: [
+        {
+          useForwardDeclare: true
+        }
+      ],
+      errors: ["Insert `goog.forwardDeclare('goog.baz.Bar');\n\n`"]
     }
   ]
 });
