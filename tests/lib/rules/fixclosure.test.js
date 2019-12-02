@@ -12,7 +12,17 @@ const readString = file =>
     .replace(/\r\n/g, "\n");
 
 new RuleTester().run("fixclosure", rule, {
-  valid: [readString("valid/ok.js")],
+  valid: [
+    readString("valid/ok.js"),
+    {
+      code: readString("valid/ok-with-config.js"),
+      options: [
+        {
+          config: ".custom-fixclosurerc"
+        }
+      ]
+    }
+  ],
   invalid: [
     {
       code: readString("invalid/missing-require.js"),
