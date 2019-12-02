@@ -14,6 +14,7 @@ const readString = file =>
 new RuleTester().run("fixclosure", rule, {
   valid: [
     readString("valid/ok.js"),
+    readString("valid/ok-with-line-feed.js"),
     {
       code: readString("valid/ok-with-provide-roots.js"),
       options: [
