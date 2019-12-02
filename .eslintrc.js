@@ -3,6 +3,9 @@
 module.exports = {
   root: true,
   plugins: ["eslint-plugin"],
+  globals: {
+    goog: "readonly"
+  },
   extends: [
     "@cybozu/eslint-config/presets/node-prettier",
     "plugin:eslint-plugin/recommended"
