@@ -1,4 +1,6 @@
 # eslint-plugin-fixclosure
+[![](https://github.com/koba04/eslint-plugin-fixclosure/workflows/test/badge.svg)](https://github.com/koba04/eslint-plugin-fixclosure/actions?workflow=test)
+[![](https://github.com/koba04/eslint-plugin-fixclosure/workflows/lint/badge.svg)](https://github.com/koba04/eslint-plugin-fixclosure/actions?workflow=lint)
 
 this is a eslint plugin for fixclosure
 
