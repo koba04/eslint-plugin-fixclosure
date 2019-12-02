@@ -15,6 +15,14 @@ new RuleTester().run("fixclosure", rule, {
   valid: [
     readString("valid/ok.js"),
     {
+      code: readString("valid/ok-with-provide-roots.js"),
+      options: [
+        {
+          provideRoots: ["app"]
+        }
+      ]
+    },
+    {
       code: readString("valid/ok-with-config.js"),
       options: [
         {
