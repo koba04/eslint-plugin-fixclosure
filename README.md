@@ -48,3 +48,14 @@ Then configure the rules you want to use under the rules section.
 A rule to test whether the code is compatible with `fixclosure` or not.
 
 This rule supports `--fix` option, so you no longer write `goog.require(...)` manually :rocket:
+
+You can pass the following options to `fixclosure`.
+
+- `depsJs`
+    - `deps.js` files, which is a comma separated list.
+- `config`
+    - a path for `.fixclosurerc`.
+
+You can see the details on the documentation of `fixclosure`.
+
+https://github.com/teppeis/fixclosure#options
