@@ -6,7 +6,10 @@ const fs = require("fs");
 const path = require("path");
 
 const readString = file =>
-  fs.readFileSync(path.resolve(__dirname, "fixtures", file)).toString();
+  fs
+    .readFileSync(path.resolve(__dirname, "fixtures", file))
+    .toString()
+    .replace(/\r\n/g, "\n");
 
 new RuleTester().run("fixclosure", rule, {
   valid: [readString("valid/ok.js")],
