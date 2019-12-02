@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/koba04/eslint-plugin-fixclosure/compare/v0.2.0...v0.3.0) (2019-12-02)
+
+
+### Features
+
+* support provideRoots option ([#8](https://github.com/koba04/eslint-plugin-fixclosure/issues/8)) ([8b1cd3e](https://github.com/koba04/eslint-plugin-fixclosure/commit/8b1cd3e))
+* support useForwardDeclare option ([#9](https://github.com/koba04/eslint-plugin-fixclosure/issues/9)) ([2ef7ccd](https://github.com/koba04/eslint-plugin-fixclosure/commit/2ef7ccd))
+
+
+
 ## [0.2.0](https://github.com/koba04/eslint-plugin-fixclosure/compare/v0.1.0...v0.2.0) (2019-12-02)
 
 
