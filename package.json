@@ -15,7 +15,6 @@
     "test": "mocha 'tests/**/*.test.js'"
   },
   "dependencies": {
-    "array.prototype.flat": "^1.2.1",
     "google-closure-deps": "^20190709.0.0",
     "prettier-linter-helpers": "^1.0.0",
     "requireindex": "~1.1.0"
@@ -25,16 +24,16 @@
     "eslint": "^6.0.1",
     "eslint-plugin-eslint-plugin": "^2.1.0",
     "fixclosure": "^2.4.1",
-    "mocha": "^6.2.0",
-    "prettier": "^1.18.2",
-    "standard-version": "^6.0.1"
+    "mocha": "^10.0.0",
+    "prettier": "^2.6.2",
+    "standard-version": "^9.5.0"
   },
   "peerDependencies": {
     "eslint": "^6.0.0",
     "fixclosure": "^2.4.1"
   },
   "engines": {
-    "node": ">=8.10.0"
+    "node": ">=14.0.0"
   },
   "license": "MIT"
 }
