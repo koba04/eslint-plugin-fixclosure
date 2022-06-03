@@ -34,7 +34,7 @@
     "fixclosure": "^2.4.1"
   },
   "engines": {
-    "node": ">=8.10.0"
+    "node": ">=14.0.0"
   },
   "license": "MIT"
 }
