@@ -23,14 +23,14 @@
     "@cybozu/eslint-config": "^17.0.1",
     "eslint": "^8.16.0",
     "eslint-plugin-eslint-plugin": "^4.2.0",
-    "fixclosure": "^2.4.1",
+    "fixclosure": "^3.0.0",
     "mocha": "^10.0.0",
     "prettier": "^2.6.2",
     "standard-version": "^9.5.0"
   },
   "peerDependencies": {
     "eslint": ">8.0.0",
-    "fixclosure": "^2.4.1"
+    "fixclosure": ">3.0.0"
   },
   "engines": {
     "node": ">=14.0.0"
