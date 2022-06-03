@@ -5,7 +5,7 @@ const rule = require("../../../lib/rules/fixclosure");
 const fs = require("fs");
 const path = require("path");
 
-const readString = file =>
+const readString = (file) =>
   fs
     .readFileSync(path.resolve(__dirname, "fixtures", file))
     .toString()
@@ -19,39 +19,39 @@ new RuleTester().run("fixclosure", rule, {
       code: readString("valid/ok-with-provide-roots.js"),
       options: [
         {
-          provideRoots: ["app"]
-        }
-      ]
+          provideRoots: ["app"],
+        },
+      ],
     },
     {
       code: readString("valid/ok-with-config.js"),
       options: [
         {
-          config: ".custom-fixclosurerc"
-        }
-      ]
-    }
+          config: ".custom-fixclosurerc",
+        },
+      ],
+    },
   ],
   invalid: [
     {
       code: readString("invalid/missing-require.js"),
       output: readString("invalid/missing-require-fix.js"),
-      errors: ["Insert `require('goog.baz');\u000a\u000agoog.`"]
+      errors: ["Insert `require('goog.baz');\u000a\u000agoog.`"],
     },
     {
       code: readString("invalid/with-deps.js"),
       output: readString("invalid/with-deps-fix.js"),
       options: [
         {
-          depsJs: [path.resolve(__dirname, "fixtures", "deps.js")]
-        }
+          depsJs: [path.resolve(__dirname, "fixtures", "deps.js")],
+        },
       ],
-      errors: ["Insert `require('goog.deps');\u000a\u000agoog.`"]
+      errors: ["Insert `require('goog.deps');\u000a\u000agoog.`"],
     },
     {
       code: readString("invalid/missing-require-type.js"),
       output: readString("invalid/missing-require-type-fix.js"),
-      errors: ["Insert `goog.requireType('goog.baz.Bar');\n\n`"]
+      errors: ["Insert `goog.requireType('goog.baz.Bar');\n\n`"],
     },
     {
       code: readString("invalid/missing-require-type.js"),
@@ -60,10 +60,10 @@ new RuleTester().run("fixclosure", rule, {
       ),
       options: [
         {
-          useForwardDeclare: true
-        }
+          useForwardDeclare: true,
+        },
       ],
-      errors: ["Insert `goog.forwardDeclare('goog.baz.Bar');\n\n`"]
-    }
-  ]
+      errors: ["Insert `goog.forwardDeclare('goog.baz.Bar');\n\n`"],
+    },
+  ],
 });
