@@ -13,9 +13,16 @@ const readString = (file) =>
 
 new RuleTester().run("fixclosure", rule, {
   valid: [
-    readString("valid/ok.js"),
-    readString("valid/ok-with-line-feed.js"),
     {
+      name: "ok.js",
+      code: readString("valid/ok.js"),
+    },
+    {
+      name: "ok-with-line-feed.js",
+      code: readString("valid/ok-with-line-feed.js"),
+    },
+    {
+      name: "ok-with-provide-roots.js",
       code: readString("valid/ok-with-provide-roots.js"),
       options: [
         {
@@ -24,6 +31,7 @@ new RuleTester().run("fixclosure", rule, {
       ],
     },
     {
+      name: "ok-with-config.js",
       code: readString("valid/ok-with-config.js"),
       options: [
         {
@@ -34,11 +42,13 @@ new RuleTester().run("fixclosure", rule, {
   ],
   invalid: [
     {
+      name: "invalid/missing-require.js",
       code: readString("invalid/missing-require.js"),
       output: readString("invalid/missing-require-fix.js"),
       errors: ["Insert `require('goog.baz');\u000a\u000agoog.`"],
     },
     {
+      name: "invalid/with-deps.js",
       code: readString("invalid/with-deps.js"),
       output: readString("invalid/with-deps-fix.js"),
       options: [
@@ -49,11 +59,13 @@ new RuleTester().run("fixclosure", rule, {
       errors: ["Insert `require('goog.deps');\u000a\u000agoog.`"],
     },
     {
+      name: "invalid/missing-require-type.js",
       code: readString("invalid/missing-require-type.js"),
       output: readString("invalid/missing-require-type-fix.js"),
       errors: ["Insert `goog.requireType('goog.baz.Bar');\n\n`"],
     },
     {
+      name: "invalid/missing-require-type.js",
       code: readString("invalid/missing-require-type.js"),
       output: readString(
         "invalid/missing-require-type-fix-with-forward-declare.js"
